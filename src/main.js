@@ -1,4 +1,5 @@
-import { createApp } from 'vue'
-import App from './App.vue'
+import CookieManagePopup from "./app";
 
-createApp(App).mount('#app')
+const popup = new CookieManagePopup('#cm__popup');
+
+popup.accessible();
