@@ -1,10 +1,15 @@
 {
-  "name": "cookie-popup",
-  "version": "1.2.1",
-  "private": true,
+  "name": "think-cookie-popup",
+  "version": "1.3.0",
+  "private": false,
+  "files": [
+    "dist/*",
+    "src/*"
+  ],
+  "main": "./dist/think-cookie-popup.common.js",
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build --target lib --name think-cookie-popup 'src/app.js'",
+    "build": "vue-cli-service build --target lib --name think-cookie-popup './src/app.js'",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
