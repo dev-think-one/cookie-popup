@@ -63,9 +63,9 @@ export default {
     },
     methods: {
         fieldsParse(text) {
-            const fields = text  .match(/\[([^\]]+)\]/g)?.map(match => match.slice(1, -1));
+            const fields = text.match(/\[([^\]]+)\]/g)?.map(match => match.slice(1, -1));
 
-            if (fields) {
+            if (fields && fields.length) {
                 fields.forEach(field => {
 
                     if (this.teleports.indexOf(field) === -1) {
