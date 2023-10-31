@@ -1,4 +1,12 @@
 {
+  "cookieConfig": {
+    "name": "cookie-manage-popup",
+    "value": "1",
+    "options": {
+      "path": "/",
+      "expires": 365
+    }
+  },
   "style": "popup",
   "color": {
     "base": "#000000",
