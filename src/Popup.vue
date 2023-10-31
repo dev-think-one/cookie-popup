@@ -17,7 +17,7 @@
 
                 <div class="teleports" v-if="isMounted">
                     <teleport v-for="(teleport, x) of teleports" :to="`#${teleport}`" :key="x">
-                        <field :consent="data.cookie[teleport.split('-')[1]]" :color="data.color.base" />
+                        <field :consent="data.cookie[teleport.split('-')[1]]" :color="colorBase" />
                     </teleport>
                 </div>
                 <div class="cm__popup__inner-nav">
@@ -47,21 +47,36 @@ export default {
     components: {
         field: Field
     },
-    watch: {
-        extShow: function () {
-            this.show = this.extShow;
-        }
-    },
     data() {
         return {
             show: false,
             data: {},
+            cookiesManager: null,
             hidden: false,
             teleports: [],
-            isMounted: false
+            isMounted: false,
+            colorBase: false,
+            colorSecondary: false,
         }
     },
+    watch: {
+        extShow: function () {
+            this.show = this.extShow;
+        },
+        show: function () {
+            if (this.data.style === 'bottom') return;
+
+            document.body.style.overflow = this.show ? 'hidden' : 'auto';
+        },
+    },
     methods: {
+        initData(options) {
+            this.data = Object.assign(jsonDataDefault, options || {})
+
+            this.colorBase = this.data?.color?.base || '#222';
+            this.colorSecondary = this.data?.color?.secondary || '#222';
+            this.cookiesManager = Cookie.withAttributes(this.data?.cookieConfig?.options || {})
+        },
         fieldsParse(text) {
             const fields = text.match(/\[([^\]]+)\]/g)?.map(match => match.slice(1, -1));
 
@@ -95,7 +110,7 @@ export default {
         apply() {
             this.show = false;
 
-            Cookie.set('cookie-manage-popup', 1);
+            this.cookiesManager?.set(this.data.cookieConfig.name, this.data.cookieConfig.value);
 
             if (typeof window.ga === 'function') {
                 window.dataLayer.push('consent', 'update', this.getConsent());
@@ -123,20 +138,12 @@ export default {
             this.apply();
         }
     },
-    created() {
-        this.$watch('show', () => {
-
-            if (this.data.style === 'bottom') return;
-
-            document.body.style.overflow = this.show ? 'hidden' : 'auto';
-        })
-    },  
     beforeMount() {
-        this.data = this.extData ? this.extData : jsonDataDefault;
+        this.initData((this.extData ? this.extData : {}))
     },
     mounted() {
 
-        if (Cookie.get('cookie-manage-popup') != '1') {
+        if (this.cookiesManager?.get(this.data?.cookieConfig?.name) != this.data?.cookieConfig?.value) {
             this.show = true;
         }
 
@@ -225,7 +232,6 @@ export default {
             left: 0;
             bottom: 0;
             width: 100%;
-            overflow-y: scroll;
 
             &.showhidden {
                 @media (max-height: 650px) {
@@ -313,7 +319,7 @@ export default {
 
                 a {
                     text-decoration: underline;
-                    text-decoration-color: v-bind('data.color.base');
+                    text-decoration-color: v-bind(colorBase);
                 }
 
                 b {
@@ -350,7 +356,7 @@ export default {
     }
 
     &__button {
-        background-color: v-bind('data.color.base');
+        background-color: v-bind(colorBase);
         padding: 12px 32px;
         display: inline-block;
         text-align: center;
@@ -362,7 +368,7 @@ export default {
         color: #fff;
 
         &.cm__button_secondary {
-            background-color: v-bind('data.color.secondary');
+            background-color: v-bind(colorSecondary);
         }
     }
 
@@ -407,7 +413,7 @@ export default {
         background-color: transparent;
         border: none;
         text-decoration: underline;
-        text-decoration-color: v-bind('data.color.base');
+        text-decoration-color: v-bind(colorBase);
     }
 }
 </style>

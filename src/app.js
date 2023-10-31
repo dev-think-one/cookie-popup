@@ -2,7 +2,7 @@ import { createApp } from 'vue';
 import CookieManagePopupVue from './Popup.vue';
 
 export class CookieManagePopup {
-	
+
 	constructor(mountTarget) {
 		this.popup = createApp(CookieManagePopupVue).mount(mountTarget);
 	}
@@ -21,7 +21,7 @@ export class CookieManagePopup {
 	}
 
 	useOption(option = {}) {
-		this.popup.data = option;
+		this.popup.initData(option);
 	}
 }
 
