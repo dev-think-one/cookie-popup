@@ -9,7 +9,7 @@
                     <button v-if="data.hidden_content.length" @click="this.hidden = !this.hidden" class="cm__link"
                         type="button">{{ data.buttons.more }}</button>
                     <button @click="all(false)" class="cm__button cm__button_secondary" type="button">{{ data.buttons.more }}</button>
-                    <button @click="all(true)" class="cm__button" type="button">Accept All</button>
+                    <button @click="all(true)" class="cm__button" type="button">{{ data.buttons.accept }}</button>
                 </div>
             </div>
             <div v-show="hidden" class="cm__popup__inner-hidden">
