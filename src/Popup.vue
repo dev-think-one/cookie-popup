@@ -8,7 +8,7 @@
                 <div class="cm__popup__inner-nav">
                     <button v-if="data.hidden_content.length" @click="this.hidden = !this.hidden" class="cm__link"
                         type="button">{{ data.buttons.more }}</button>
-                    <button @click="all(false)" class="cm__button cm__button_secondary" type="button">{{ data.buttons.more }}</button>
+                    <button @click="all(false)" class="cm__button cm__button_secondary" type="button">{{ data.buttons.reject }}</button>
                     <button @click="all(true)" class="cm__button" type="button">{{ data.buttons.accept }}</button>
                 </div>
             </div>
@@ -21,7 +21,7 @@
                     </teleport>
                 </div>
                 <div class="cm__popup__inner-nav">
-                    <button @click="apply()" class="cm__button" type="button">Save preferences</button>
+                    <button @click="apply()" class="cm__button" type="button">{{ data.buttons.save }}</button>
                 </div>
             </div>
         </div>
