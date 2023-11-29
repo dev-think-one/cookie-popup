@@ -39,5 +39,11 @@
     }
   ],
   "main_content": "<h2>We use cookies<\/h2>\r\nWe use cookies to make sure this website works properly and to help us understand how people use it. Cookies also help to improve your experience on the site, by personalising content and showing information that is relevant to you. Data from cookies may be shared with third parties. You can find out more by reading our cookie policy.\r\n\r\nTo continue using the site, please accept these cookies or manage your cookie settings below.",
-  "hidden_content": "<h2>Your cookie settings<\/h2>\r\nWe use cookies to make sure this website works properly and to help us understand how people use it. Cookies also help to improve your experience on the site, by personalising content and showing information that is relevant to you.\r\n\r\nCookies may be set by us or by third-party providers whose services we have added to our pages. Data from cookies may be shared with third-parties.\r\n\r\nPlease select and save your cookie settings below:\r\n\r\n[cookie-0]\r\n[cookie-1]\r\n[cookie-2]\r\n\r\nTo learn more about cookies and how we use them,\u00a0<a href=\"contact\/\"><b>please read our cookie policy in full.<\/b><\/a>\r\n\r\n&nbsp;"
+  "hidden_content": "<h2>Your cookie settings<\/h2>\r\nWe use cookies to make sure this website works properly and to help us understand how people use it. Cookies also help to improve your experience on the site, by personalising content and showing information that is relevant to you.\r\n\r\nCookies may be set by us or by third-party providers whose services we have added to our pages. Data from cookies may be shared with third-parties.\r\n\r\nPlease select and save your cookie settings below:\r\n\r\n[cookie-0]\r\n[cookie-1]\r\n[cookie-2]\r\n\r\nTo learn more about cookies and how we use them,\u00a0<a href=\"contact\/\"><b>please read our cookie policy in full.<\/b><\/a>\r\n\r\n&nbsp;",
+  "buttons": {
+    "accept": "Accept All",
+    "reject": "Reject All",
+    "save": "Save preferences",
+    "more": "More options"
+  }
 }

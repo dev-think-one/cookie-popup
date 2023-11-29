@@ -7,8 +7,8 @@
                 <div class="cm__popup__inner-content" v-html="data.main_content"></div>
                 <div class="cm__popup__inner-nav">
                     <button v-if="data.hidden_content.length" @click="this.hidden = !this.hidden" class="cm__link"
-                        type="button">More options</button>
-                    <button @click="all(false)" class="cm__button cm__button_secondary" type="button">Reject All</button>
+                        type="button">{{ data.buttons.more }}</button>
+                    <button @click="all(false)" class="cm__button cm__button_secondary" type="button">{{ data.buttons.more }}</button>
                     <button @click="all(true)" class="cm__button" type="button">Accept All</button>
                 </div>
             </div>
