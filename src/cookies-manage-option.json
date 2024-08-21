@@ -7,7 +7,7 @@
       "expires": 365
     }
   },
-  "style": "popup",
+  "style": "bottom",
   "color": {
     "base": "#000000",
     "secondary": "#000000"
@@ -38,8 +38,8 @@
       "description": "These cookies allow us to recognise and count the visitors to our website, and to see how visitors interact with our site. We can then use these insights to improve the way our website works. We also use this information to make our website and the advertising you see more relevant to your interests."
     }
   ],
-  "main_content": "<h2>We use cookies<\/h2>\r\nWe use cookies to make sure this website works properly and to help us understand how people use it. Cookies also help to improve your experience on the site, by personalising content and showing information that is relevant to you. Data from cookies may be shared with third parties. You can find out more by reading our cookie policy.\r\n\r\nTo continue using the site, please accept these cookies or manage your cookie settings below.",
-  "hidden_content": "<h2>Your cookie settings<\/h2>\r\nWe use cookies to make sure this website works properly and to help us understand how people use it. Cookies also help to improve your experience on the site, by personalising content and showing information that is relevant to you.\r\n\r\nCookies may be set by us or by third-party providers whose services we have added to our pages. Data from cookies may be shared with third-parties.\r\n\r\nPlease select and save your cookie settings below:\r\n\r\n[cookie-0]\r\n[cookie-1]\r\n[cookie-2]\r\n\r\nTo learn more about cookies and how we use them,\u00a0<a href=\"contact\/\"><b>please read our cookie policy in full.<\/b><\/a>\r\n\r\n&nbsp;",
+  "main_content": "We use cookies for site operations, analytics and personalisation. Data from these may be shared with third parties. Please read our <a href=\"/cookie-policy\">cookie policy</a> for more info.",
+  "hidden_content": "<p>We use cookies to ensure the website functions correctly and to enhance your experience by personalising content.</p> <p>Cookies may be set by us or third-party services, and data may be shared.</p> <p>Please choose and save your cookie settings below: </p> [cookie-0] <br> [cookie-1] <br> [cookie-2] <br> <p>To learn more about cookies and how we use them, please read our <a href=\"/cookie-policy\">cookie policy</a> in full.</p>",
   "buttons": {
     "accept": "Accept All",
     "reject": "Reject All",
