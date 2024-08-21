@@ -6,10 +6,10 @@
             <div v-if="!hidden" class="cm__popup__inner-main">
                 <div class="cm__popup__inner-content" v-html="data.main_content"></div>
                 <div class="cm__popup__inner-nav">
-                    <button v-if="data.hidden_content.length" @click="this.hidden = !this.hidden" class="cm__link"
-                        type="button">{{ data.buttons.more }}</button>
-                    <button @click="all(false)" class="cm__button cm__button_secondary" type="button">{{ data.buttons.reject }}</button>
                     <button @click="all(true)" class="cm__button" type="button">{{ data.buttons.accept }}</button>
+                    <button @click="all(false)" class="cm__button cm__button_secondary" type="button">{{ data.buttons.reject }}</button>
+                    <button v-if="data.hidden_content.length" @click="this.hidden = !this.hidden" class="cm__link"
+                    type="button">{{ data.buttons.more }}</button>
                 </div>
             </div>
             <div v-show="hidden" class="cm__popup__inner-hidden">
@@ -167,9 +167,7 @@ export default {
         z-index: 10;
 
         @media (max-width: 640px) {
-            height: 100%;
             display: flex;
-            align-items: flex-end;
         }
 
         &.__popup {
@@ -182,8 +180,8 @@ export default {
             overflow: auto;
             padding: 20px;
 
-            @media (max-width: 576px) {
-                padding: 0;
+            @media (max-width: 640px) {
+                align-items: center
             }
 
             &.showhidden {
@@ -208,6 +206,7 @@ export default {
 
                 @media (max-width: 576px) {
                     padding: 40px 20px;
+                    width: auto;
                 }
 
                 &-nav {
@@ -232,14 +231,10 @@ export default {
             left: 0;
             bottom: 0;
             width: 100%;
+            align-items: flex-end;
 
             &.showhidden {
                 @media (max-height: 650px) {
-                    display: block;
-                    height: 100%;
-                }
-
-                @media (max-width: 920px) {
                     display: block;
                     height: 100%;
                 }
@@ -252,12 +247,19 @@ export default {
                     top: 20px;
                 }
             }
+
+            .cm__button {
+                @media (max-width: 640px) {
+                    width: 100%;
+                }
+            }
         }
 
         &.__bottom & {
             &__inner {
                 padding-top: 40px;
                 padding-bottom: 20px;
+                height: 100%;
 
                 &-main,
                 &-hidden {
@@ -267,10 +269,17 @@ export default {
                     @media (max-width: 640px) {
                         padding: 0 15px;
                     }
+
+                    .cm__popup__inner-nav {
+                        @media (max-width: 640px) {
+                            padding-top: 20px;
+                        }
+                    }
                 }
 
                 &-main {
                     display: flex;
+                    justify-content: center;
 
                     @media (max-width: 640px) {
                         display: block;
@@ -281,17 +290,19 @@ export default {
 
                         @media (max-width: 640px) {
                             padding-left: 0;
-                            padding-top: 30px;
+                            padding-top: 20px;
                         }
                     }
                 }
 
                 &-nav {
                     display: flex;
-                    flex-direction: column-reverse;
-                    justify-content: flex-end;
-                    flex-shrink: 0;
                     gap: 10px;
+                    align-items: center;
+
+                    .cm__link {
+                        white-space: nowrap;
+                    }
                 }
             }
         }
@@ -338,7 +349,7 @@ export default {
             &-nav {
                 @media (max-width: 640px) {
                     display: flex;
-                    flex-direction: column-reverse;
+                    flex-direction: column;
                     justify-content: flex-end;
                     flex-shrink: 0;
                     gap: 10px;
