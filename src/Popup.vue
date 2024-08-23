@@ -241,7 +241,7 @@ export default {
             }
 
             .cm__close {
-                top: 10px;
+                top: 20px;
 
                 @media (max-width: 640px) {
                     top: 20px;
@@ -257,8 +257,7 @@ export default {
 
         &.__bottom & {
             &__inner {
-                padding-top: 40px;
-                padding-bottom: 20px;
+                padding: 20px 0;
                 height: 100%;
 
                 &-main,
@@ -292,6 +291,12 @@ export default {
                             padding-left: 0;
                             padding-top: 20px;
                         }
+                    }
+                }
+
+                &-hidden {
+                    .cm__popup__inner-nav {
+                        padding-top: 20px;
                     }
                 }
 
